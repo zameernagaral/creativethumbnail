@@ -1,0 +1,661 @@
+:root{
+    --primary-color: grey;
+    --secondary-color: yellow;
+    --third-color: black;
+    
+}
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+    scroll-behavior: smooth;
+    overscroll-behavior:none;
+    scroll-padding-top: 2rem;
+    text-transform: capitalize;
+}
+body{
+    background-color: var(--primary-color);    
+}
+nav{
+    display: flex;
+    justify-content:space-between;
+    padding: 25px 80px;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    z-index: 9999;
+    
+}
+
+header {
+    overflow: hidden;
+    height: 100vh;
+    background: none;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: url("empty-modern-creative-agency-office-with-dual-monitors-setup-with-processing-video-film-montage-vide.jpg");
+    background-size: cover;
+    background-position: center;
+    
+    filter: brightness(0.5);
+    /* Optional: darken image for contrast */
+    pointer-events: none;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    /* Blend to --primary-color at the bottom */
+    background: linear-gradient(to bottom, transparent 80%, var(--primary-color) 100%);
+    pointer-events: none;
+}
+/* Keep header content above the blur */
+.upper {
+    position: relative;
+    z-index: 3;
+}
+nav a:hover{
+    transform: scale(1.1);
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a::after {
+    content: "";
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+header{
+    margin-top: 85px;
+    
+    
+}
+.logo{
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    
+    
+}
+.logo img{
+    width: 50px;
+    height: 50px;
+    transform: translateY(-18px);
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+.logo img:hover{
+    transform: translateY(-18px) scale(1.1);
+    
+    
+    background: var(--third-color);
+
+}
+.links{
+    display: flex;
+    gap: 50px;
+    
+}
+.hire{
+    color: black;
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    
+    transition: all 0.3s ease-in-out;
+    
+    transform: translateY(-9px);
+
+}
+.hire:hover{
+    transform: scale(1.1);
+    background: var(--third-color);
+    
+    
+
+
+}
+.upper{
+    display: flex;
+    justify-content: space-around;
+
+}
+.leftUpper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 100px;
+    margin-right: 200px;
+    color: white;
+    
+}
+.upperText{
+    font-size: 3rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, var(--secondary-color) 0%, white 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+}
+
+.lowerText{
+    font-size: 3rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, var(--secondary-color) 0%, white 50%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+.contact-links {
+    display: flex;
+    
+    gap: 1.2em;
+    margin-top: 1.2em;
+}
+
+.contact-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.2s;
+}
+
+.contact-links button{
+    color: white;
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    
+    transition: all 0.3s ease-in-out;
+}
+.contact-links button:hover{
+    background: var(--fourth-color);
+    transform: scale(1.1);
+}
+.right{
+    margin-top: 50px;
+    
+    
+}
+
+.lower{
+    display: flex;
+    justify-content: space-around;
+    
+    gap: 20px;
+    margin-top: 100px;
+}
+.lowerSub{
+    display: flex;
+    gap: 10px;
+    background:transparent;
+    text-align: center;
+    z-index: 100;
+
+}
+.lowerSub h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+.lowerSub p{
+    font-weight: 900;
+    margin-top: 8px;
+    color: var(--secondary-color);
+}
+.services{
+    padding: 30px;
+    text-align: center;
+    color: white;
+    background-color: var(--secondary-color);
+    width: 90vw;
+        margin-left: 50px;
+        border-radius: 50px;
+    margin-top: 30px;
+    
+    text-align: start;
+
+  
+}
+.services h1{
+    font-size: 2rem;
+        font-weight: bold;
+        color: var(--third-color);
+        margin-bottom: 15px;
+        text-align: center;
+}
+.services li{
+    color: var(--third-color);
+    
+    
+}
+.servicesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    
+}
+.servicesContainer img{
+    border-radius: 80px;
+}
+.canva{
+    width: 200px;
+    padding: 10px;
+    height: 150px;
+    background-size: contain;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    
+    
+}
+.canva:hover{
+    transform: scale(1.1);
+}
+.ai{
+    width: 200px;
+    padding: 10px;
+    height: 150px;
+    background-size: contain;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    
+    
+}
+.ai:hover{
+    transform: scale(1.1)
+}
+.chatgpt{
+    width: 200px;
+    padding: 10px;
+    height: 150px;
+    background-size: contain;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    
+}
+.chatgpt:hover{
+    transform: scale(1.1);
+}
+.lr{
+    width: 200px;
+    padding: 10px;
+    height: 150px;
+    background-size: contain;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    
+}
+.lr:hover{
+    transform: scale(1.1);
+}
+.ps{
+    width: 200px;
+    padding: 10px;
+    height: 150px;
+    background-size: contain;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    
+}
+.ps:hover{
+    transform: scale(1.1);
+}
+.works{
+    background: var(--third-color);
+    max-width: 1100px;
+    margin-left: 50px;
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 30px;
+    border-radius: 50px;
+    overscroll-behavior: auto;
+
+}
+.workC{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-right: 20px;
+    margin-left: 20px;
+    
+}
+.work{
+    padding: 15px;
+    
+}
+.works img{
+    width: 400px;
+    padding: 10px;
+    height: 300px;
+    background-size: contain;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    
+}
+.works img:hover{
+    transform: scale(1.1);
+}
+/* Stylish scrollbar for .works section */
+.works {
+    
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) var(--third-color);
+    /* For Firefox */
+}
+
+/* For Chrome, Edge, Safari */
+.works::-webkit-scrollbar {
+    height: 12px;
+    background: var(--third-color);
+    border-radius: 10px;
+}
+
+.works::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    border: 2px solid var(--third-color);
+    transition: background 0.3s;
+}
+
+.works::-webkit-scrollbar-thumb:hover {
+    background: var(--fourth-color);
+}
+
+.works::-webkit-scrollbar-track {
+    background: var(--third-color);
+    border-radius: 10px;
+}
+.experiencesContainer{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    margin-top: 100px;
+    
+    
+    
+}
+.experiencesContainer h1{
+    color: var(--secondary-color);
+}
+.experiencesSub{
+
+padding: 20px;
+border-radius: 10px;
+
+}
+
+.experiences{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    background-color: black;
+    padding: 25px;
+    border-radius: 50px;
+    
+}
+.experiences{
+    color: var(--secondary-color);
+}
+.experiences h1{
+    text-decoration: underline;
+}
+.experiences p{
+    color: white;
+}
+.experiencesSub:hover{
+    background-color: var(--third-color);
+    
+    
+}
+.skills{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 50px;
+    
+    
+}
+.skills button{
+    color: black;
+    opacity: 0.8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.skills button:hover{
+    
+    transform: scale(1.1);
+}
+footer{
+    text-align: center;
+    color: white;
+    margin-top: 50px
+}
+.thumbnailViewer img{
+    width: 800px;
+    height: 500px;
+    background-size: contain;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 250px;    
+    margin-bottom: 100px;
+
+}
+.thumbnailViewer img:hover{
+    border: 2px solid var(--fifth-color);
+}
+.back{
+    margin-top: 50px;
+    margin-left: 50px;
+    color: white;
+    background-color: var(--fourth-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.back:hover{
+    
+    transform: scale(1.1);
+}
+/* Hamburger styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    gap: 6px;
+    margin-left: 20px;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* Responsive nav */
+@media screen and (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 0;
+        
+        background: var(--primary-color);
+        position: absolute;
+        top: 80px;
+        left: 10px;
+        display: none;
+        z-index: 100;
+        border-radius: 25px;
+    }
+
+    .links.show {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .links a,
+    .hire {
+        padding: 18px 24px;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .hire{
+        border: none;
+        scale: 0.8;
+        margin-top: 10px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+@media screen and (max-width: 900px) {
+    .upper {
+        
+        flex-direction: column-reverse;
+        align-items: center;
+        
+    }
+
+    .leftUpper {
+        margin-right: 0;
+        margin-top: 40px;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .lower {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .contact-links {
+        margin-left: 6em;
+        gap: 1.2em;
+        margin-top: 1.2em;
+    }
+        .works {
+            
+            margin-top: 50px;
+            margin-left: 3px;
+            
+    
+        }
+        .workC{
+            display: flex;
+            
+            align-items: center;
+            justify-content: center;
+            
+        }
+        
+    
+        .works img {
+            width: 300px;
+            height: 200px;
+            
+            background-size: contain;
+            border-radius: 50px;
+            transition: all 0.3s ease-in-out;
+            
+        }
+    
+    .experiencesContainer {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    .services{
+        width: 90vw;
+        margin-left: 30px;
+        
+        padding: 20px;
+    }
+    
+    
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        padding: 10px 8px;
+    }
+
+    .thumbnailViewer img {
+        width: 90vw;
+        height: auto;
+        margin-left: 20px;
+        margin-top: 100px;
+    }
+}

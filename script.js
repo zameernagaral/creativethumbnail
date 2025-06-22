@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let lower = document.querySelector(".lower");
     let work = document.querySelectorAll(".thumbnails");
     let hire = document.querySelector(".hire");
+    let works = document.querySelector(".workC");
+    
 
     
         const hamburger = document.getElementById('hamburger');
@@ -23,6 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
 hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
         links.classList.toggle('show');
+        window.addEventListener('click', (event) => {
+            if (!hamburger.contains(event.target) && !links.contains(event.target)) {
+                hamburger.classList.remove('active');
+                links.classList.remove('show');
+            }
+        });
 });
 // Optional: Hide menu when a link is clicked (for better UX)
 document.querySelectorAll('.links a').forEach(link => {
@@ -31,6 +39,8 @@ document.querySelectorAll('.links a').forEach(link => {
                 links.classList.remove('show');
             });
 });
+
+
     
     
 
@@ -75,9 +85,8 @@ document.querySelectorAll('.links a').forEach(link => {
         window.location.reload();
     });
 
-    if (window.scrollTo(10,10)) {
-     console.log("hello");
-        
-    }
+    
+
+
 
 });

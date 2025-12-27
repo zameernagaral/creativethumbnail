@@ -376,7 +376,7 @@ header {
 
 .works {
     background: var(--third-color);
-    max-width: 1100px;
+    max-width: 90vw;
     margin-left: 50px;
     display: flex;
     overflow-x: scroll;
@@ -390,6 +390,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
 
 
